@@ -55,7 +55,6 @@ public class MyTestDemo extends BaseClass{
 			PaymentPage pay = new PaymentPage(driver);
 	@BeforeClass
 	public void browser() {
-		
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
@@ -72,16 +71,16 @@ public class MyTestDemo extends BaseClass{
 		base.robotPressandRelease();
         movies.movieSearch(driver).click();
 	    movies.movienameEnter(driver).sendKeys(movie);
-	    Thread.sleep(2000);
+	    base.WaitToClick(2000);
 	    base.robotPressandRelease();
 	    book.bookTicketsbtn(driver).click();
 		book.dateClick(driver).click();
 		book.showTime(driver).click();
 		book.acceptpopupButton(driver).click();
-		Thread.sleep(5000);
+		base.WaitToClick(5000);
 		book.tickets(driver).click();
 		SeatCount.procceedQty(driver).click();
-		Thread.sleep(5000);
+		base.WaitToClick(5000);
 		
 	    List<WebElement> aseats;
 	    List<WebElement> sseats;
@@ -103,12 +102,12 @@ public class MyTestDemo extends BaseClass{
 	    if(i==rows.size())
 	    break;
 	  }
-	    Thread.sleep(10000)	;
+	    base.WaitToClick(10000);
         count.btmcmntBook(driver).click();
-        Thread.sleep(10000);
+        base.WaitToClick(10000);
         count.shmTicket(driver).click();
 	    pay.prepay(driver).click();
-	   Thread.sleep(3000);
+	    base.WaitToClick(10000);
 	   
        }
 		
